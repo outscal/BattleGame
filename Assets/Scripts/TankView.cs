@@ -4,34 +4,23 @@ using UnityEngine;
 
 public class TankView : MonoBehaviour 
 {
-    //public GameObject RedTank;
-    //public GameObject BlueTank;
-    //public GameObject GreenTank;
-
     public float tankSpeed;
     public float tankHealth;
 
-    public TankModel tankModel;
-
     public TankView()
     {
-        //tankSpeed = tankModel.Speed;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        //Debug.Log("Tank Created");
         tankSpeed = TankModel.Speed;
     }
 
-    // Update is called once per frame
     public void Update()
     {
         #region Movement
         if (Input.GetKey(KeyCode.D))
         {
-            //Debug.Log("Speed "+ TankModel.inspectorSpeed);
             transform.Translate(tankSpeed, 0, 0);
         }
 

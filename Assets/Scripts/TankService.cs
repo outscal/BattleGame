@@ -4,45 +4,74 @@ using UnityEngine;
 
 public class TankService : MonoBehaviour
 {
+    private static TankService instance;
+    public TankService Instance {  get { return instance; } } 
+
     public TankView redTankView;
     public TankView blueTankView;
     public TankView greenTankView;
-
-    public GameObject bullet_red;
-    public GameObject bullet_blue;
-    public GameObject bullet_green;
-
-    public float speed  ;
+    
+    public float speed;
     public TankModel tankModel;
-    //public TankView tankView;
-    //public Rigidbody rb;
+    public BulletService bulletService;
+
+    public void Awake()
+    {
+        if(instance ==null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
+    void Start()
+    {
+        bulletService = GetComponent<BulletService>();
+    }
 
     public void Update()
     {
         //rb = GetComponent<Rigidbody>();
 
+        SpawnTank();
+        SpawnBullets();
+        
+    }
 
+    void SpawnTank()
+    {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            //Debug.Log("Red Tank");
             TankModel model = new TankModel(0.05f, 100f);
             TankController tank = new TankController(model, redTankView);
+            Debug.Log(redTankView);
         }
 
-        if (Input.GetKeyDown(KeyCode.B))
+        else if (Input.GetKeyDown(KeyCode.B))
         {
-            //Debug.Log("Blue Tank");
             TankModel model = new TankModel(.02f, 50f);
             TankController tank = new TankController(model, blueTankView);
         }
 
-        if (Input.GetKeyDown(KeyCode.C))
+        else if (Input.GetKeyDown(KeyCode.C))
         {
-            //Debug.Log("Green Tank");
             TankModel model = new TankModel(.1f, 200f);
             TankController tank = new TankController(model, greenTankView);
         }
+    }
 
+    public void SpawnBullets()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            bulletService.ShootBullets();
+        }
+    }
+}
+        /*
         #region Firing 
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -115,10 +144,10 @@ public class TankService : MonoBehaviour
 
         }
         #endregion
+        */
 
 
-
-    }
+    
 
 
     /*
@@ -131,6 +160,6 @@ public class TankService : MonoBehaviour
         rb.AddForce(movement);
     }
     */
-}
+
 
     

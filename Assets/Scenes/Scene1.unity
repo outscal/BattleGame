@@ -398,6 +398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 544574864}
   - component: {fileID: 544574865}
+  - component: {fileID: 544574863}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -405,6 +406,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &544574863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544574862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4a7fd8497c72d44a90023e2ad57fb24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redBulletView: {fileID: -6954580411717822910, guid: 53a7699cdfd848049bd58f61bd392765,
+    type: 3}
+  blueBulletView: {fileID: 811552150228519913, guid: bfcafcf20cb941f44a0956655dd45a6f,
+    type: 3}
+  greenBulletView: {fileID: 7324207228717858416, guid: 8898cd15c2db2d74fbacac758062e477,
+    type: 3}
+  speed: 10
+  tankService: {fileID: 0}
 --- !u!4 &544574864
 Transform:
   m_ObjectHideFlags: 0
@@ -437,11 +458,5 @@ MonoBehaviour:
     type: 3}
   greenTankView: {fileID: 2771625314397037834, guid: b259b629af903ce4781b3af564560174,
     type: 3}
-  bullet_red: {fileID: 994451957428570723, guid: 53a7699cdfd848049bd58f61bd392765,
-    type: 3}
-  bullet_blue: {fileID: 498921339176235684, guid: bfcafcf20cb941f44a0956655dd45a6f,
-    type: 3}
-  bullet_green: {fileID: 6258619491684951633, guid: 8898cd15c2db2d74fbacac758062e477,
-    type: 3}
   speed: 100
-  tankView: {fileID: 0}
+  bulletService: {fileID: 0}
