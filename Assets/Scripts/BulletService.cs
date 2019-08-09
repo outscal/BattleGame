@@ -30,17 +30,11 @@ public class BulletService : MonoBehaviour
 
     void Start()
     {
-        tankService = GetComponent<TankService>();
-        bulletController = GetComponent<BulletController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            //bulletController.Fire();
-        }
     }
 
     void GetBulletsData()

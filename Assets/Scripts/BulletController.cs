@@ -5,23 +5,20 @@ using UnityEngine;
 public class BulletController 
 {
     public BulletView prefab;
-    public BulletController(/*BulletModel bulletModel,*/BulletView bulletPrefab)
+    public TankController tankController;
+
+    public BulletController(BulletView bulletPrefab)
     {
-        //BulletModel = bulletModel;
-        //prefab = bulletPrefab;
-        //if(TankView.fire)
-        {
-            BulletView = GameObject.Instantiate<BulletView>(bulletPrefab);
-            Debug.Log("Bullet");
-          // 
-        }
+        BulletView = GameObject.Instantiate<BulletView>(bulletPrefab, TankController.Position + new Vector3(0,1,2),Quaternion.identity);
+        Rigidbody instBulletRigidBody = BulletView.GetComponent<Rigidbody>();
+        instBulletRigidBody.AddForce(Vector3.forward * TankModel.BulletSpeed);
     }
 
-    public void Fire()
-    {
-        Debug.Log("Fire");
-        GameObject.Instantiate<BulletView>(prefab);
-    }
+    //public void Fire()
+    //{
+    //    Debug.Log("Fire");
+    //    GameObject.Instantiate<BulletView>(prefab);
+    //}
     
 
     public BulletModel BulletModel { get; }

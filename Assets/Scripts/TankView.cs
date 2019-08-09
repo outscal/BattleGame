@@ -15,9 +15,7 @@ public class TankView : MonoBehaviour
     void Start()
     {
         tankSpeed = TankModel.Speed;
-        //bulletView = GetComponent<BulletView>();
         fire = false;
-        //bulletController = new BulletController(null,null);
     }
 
     public void Update()
