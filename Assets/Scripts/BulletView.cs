@@ -11,7 +11,13 @@ public class BulletView : MonoBehaviour
         bulletSpeed = BulletModel.Speed;
     }
 
-    
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag=="Enemy")
+        {
+            Destroy(collision.gameObject);
+        }
+    }
+
     public BulletController BulletController { get; set; }
 }

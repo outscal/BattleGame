@@ -12,6 +12,7 @@ public class BulletController
         BulletView = GameObject.Instantiate<BulletView>(bulletPrefab, TankController.Position + new Vector3(0,1,2),Quaternion.identity);
         Rigidbody instBulletRigidBody = BulletView.GetComponent<Rigidbody>();
         instBulletRigidBody.AddForce(Vector3.forward * TankModel.BulletSpeed);
+        
     }
 
     //public void Fire()
