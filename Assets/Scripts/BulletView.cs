@@ -12,8 +12,12 @@ public class BulletView : MonoBehaviour
         bulletSpeed = BulletModel.Speed;
     }
 
-    void Update()
+    
+    public void Call()
     {
-        
+        Debug.Log("Fire");
+        BulletView bulletView = GameObject.Instantiate<BulletView>(BulletController.prefab);
     }
+    
+    public BulletController BulletController { get; set; }
 }

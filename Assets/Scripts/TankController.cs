@@ -8,9 +8,11 @@ public class TankController
     {
         TankModel = tankModel;
         TankView = GameObject.Instantiate<TankView>(tankPrefab);
+        
         Debug.Log("Tank View Created", TankView);
     }
 
     public TankModel TankModel { get; }
     public TankView TankView { get; }
+
 }

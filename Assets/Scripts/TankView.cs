@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankView : MonoBehaviour 
+public class TankView : MonoBehaviour
 {
     public float tankSpeed;
     public float tankHealth;
+    public static bool fire;
 
-    public TankView()
-    {
-    }
+    public BulletController bulletController;
+    public BulletService bulletService;
+    public BulletView bulletView;
 
     void Start()
     {
         tankSpeed = TankModel.Speed;
+        //bulletView = GetComponent<BulletView>();
+        fire = false;
+        //bulletController = new BulletController(null,null);
     }
 
     public void Update()
@@ -39,5 +43,6 @@ public class TankView : MonoBehaviour
             transform.Translate(-1 * tankSpeed, 0, 0);
         }
         #endregion
+        
     }
 }

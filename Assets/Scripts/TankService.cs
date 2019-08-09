@@ -10,9 +10,10 @@ public class TankService : MonoBehaviour
     public TankView redTankView;
     public TankView blueTankView;
     public TankView greenTankView;
+
+    public BulletView bulletPrefab;
     
     public float speed;
-    public TankModel tankModel;
     public BulletService bulletService;
 
     public void Awake()
@@ -45,21 +46,32 @@ public class TankService : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            TankModel model = new TankModel(0.05f, 100f);
+            TankModel model = new TankModel(0.05f, 100f, 5f, 100f);
             TankController tank = new TankController(model, redTankView);
-            Debug.Log(redTankView);
+            bulletPrefab = bulletService.redBulletView;
+            BulletModel bulletModel = new BulletModel(5f, 100f);
+            //BulletController bulletController = new BulletController(bulletModel,bulletService.redBulletView);
+
         }
 
         else if (Input.GetKeyDown(KeyCode.B))
         {
-            TankModel model = new TankModel(.02f, 50f);
+            TankModel model = new TankModel(.02f, 50f, 5f, 100f);
             TankController tank = new TankController(model, blueTankView);
+            BulletModel bulletModel = new BulletModel(15f, 50f);
+            bulletPrefab = bulletService.blueBulletView;
+            //BulletController bulletController = new BulletController(bulletModel, bulletService.blueBulletView);
+
         }
 
         else if (Input.GetKeyDown(KeyCode.C))
         {
-            TankModel model = new TankModel(.1f, 200f);
+            TankModel model = new TankModel(.1f, 200f, 5f, 100f);
             TankController tank = new TankController(model, greenTankView);
+            BulletModel bulletModel = new BulletModel(52f, 25f);
+            bulletPrefab = bulletService.greenBulletView;
+            //BulletController bulletController = new BulletController(bulletModel, bulletService.greenBulletView);
+
         }
     }
 
@@ -67,7 +79,7 @@ public class TankService : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            bulletService.ShootBullets();
+            BulletController bulletController = new BulletController(bulletPrefab);
         }
     }
 }

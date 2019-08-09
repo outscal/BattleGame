@@ -14,6 +14,7 @@ public class BulletService : MonoBehaviour
     public float speed;
     public BulletModel bulletModel;
     public TankService tankService;
+    public BulletController bulletController;
 
     public void Awake()
     {
@@ -30,13 +31,23 @@ public class BulletService : MonoBehaviour
     void Start()
     {
         tankService = GetComponent<TankService>();
+        bulletController = GetComponent<BulletController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            //bulletController.Fire();
+        }
     }
+
+    void GetBulletsData()
+    {
+
+    }
+    /*
 
     public void ShootBullets()
     {
@@ -57,7 +68,7 @@ public class BulletService : MonoBehaviour
             Debug.Log("Shoot Green Bullets"); 
             BulletModel model = new BulletModel(200f, 10f); 
             BulletController bullet = new BulletController(model, greenBulletView);
-        }
-        
+        }   
     }
+    */
 }

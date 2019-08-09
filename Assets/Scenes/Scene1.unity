@@ -458,5 +458,6 @@ MonoBehaviour:
     type: 3}
   greenTankView: {fileID: 2771625314397037834, guid: b259b629af903ce4781b3af564560174,
     type: 3}
+  bulletPrefab: {fileID: 0}
   speed: 100
   bulletService: {fileID: 0}
