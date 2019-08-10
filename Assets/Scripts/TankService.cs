@@ -89,9 +89,10 @@ public class TankService : MonoBehaviour
 
     void SpawnEnemyTanks()
     {
-        randomPosition = new Vector3(Random.Range(-130.0F, 130.0F), 0, Random.Range(-130.0F, 130.0F));
+        randomPosition = new Vector3(Random.Range(-10.0F, 40.0F), 0, Random.Range(-10.0F, 40.0F));
         int selection = Random.Range(0, enemyTanks.Count);
         Instantiate(enemyTanks[selection], randomPosition ,Quaternion.identity);
+        BulletController bulletController = new BulletController(bulletPrefab);
     }
 }
     
