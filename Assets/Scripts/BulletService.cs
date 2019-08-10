@@ -41,28 +41,4 @@ public class BulletService : MonoBehaviour
     {
 
     }
-    /*
-
-    public void ShootBullets()
-    {
-        if(tankService.redTankView)
-        {
-            Debug.Log("Shoot Red Bullets");
-            BulletModel model = new BulletModel(100f, 50f);
-            BulletController bullet = new BulletController(model, redBulletView);
-        }
-        else if (tankService.blueTankView)
-        {
-            Debug.Log("Shoot Blue Bullets");
-            BulletModel model = new BulletModel(110f, 60f);
-            BulletController bullet = new BulletController(model, blueBulletView);
-        }
-        else if (tankService.greenTankView)
-        {
-            Debug.Log("Shoot Green Bullets"); 
-            BulletModel model = new BulletModel(200f, 10f); 
-            BulletController bullet = new BulletController(model, greenBulletView);
-        }   
-    }
-    */
 }

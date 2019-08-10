@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BulletController 
 {
-    public BulletView prefab;
     public TankController tankController;
 
     public BulletController(BulletView bulletPrefab)
@@ -12,7 +11,7 @@ public class BulletController
         BulletView = GameObject.Instantiate<BulletView>(bulletPrefab, TankController.Position + new Vector3(0,1,2),Quaternion.identity);
         Rigidbody instBulletRigidBody = BulletView.GetComponent<Rigidbody>();
         instBulletRigidBody.AddForce(Vector3.forward * TankModel.BulletSpeed);
-        
+        BulletView.DestroyBullet();
     }
 
     //public void Fire()

@@ -6,9 +6,13 @@ public class BulletView : MonoBehaviour
 {
     public float bulletSpeed;
     public float bulletDamage;
+
+    public BulletController bulletController;
+    public TankService tankService;
     void Start()
     {
         bulletSpeed = BulletModel.Speed;
+        tankService = GetComponent<TankService>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -17,6 +21,11 @@ public class BulletView : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+    }
+
+    public void DestroyBullet()
+    {
+        Destroy(gameObject,2f);
     }
 
     public BulletController BulletController { get; set; }

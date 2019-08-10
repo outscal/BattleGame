@@ -83,6 +83,7 @@ public class TankService : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             BulletController bulletController = new BulletController(bulletPrefab);
+            //Destroy(bulletController, 2f);
         }
     }
 
