@@ -27,18 +27,11 @@ public class BulletService : MonoBehaviour
             Destroy(this);
         }
     }
-
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
+    
     void GetBulletsData()
     {
 
     }
+
+    public Dictionary<string, string> test;
 }

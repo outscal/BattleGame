@@ -4,18 +4,27 @@ using UnityEngine;
 
 public class TankModel 
 {
-   
-    public TankModel(float speed, float health,float bulletSpeed,float damage)
+    public TankModel(TankScriptableObject tankscriptableobject)
     {
-        Speed = speed;
-        Health = health;
-        BulletSpeed = bulletSpeed;
-        Damage = damage;
+        Speed = tankscriptableobject.Speed;
+        Health = tankscriptableobject.Health;
+        TankType = tankscriptableobject.tankType;
+
     }
+
+    
+    //public TankModel(TankType tankType,float speed, float health,float bulletSpeed,float damage)
+    //{
+    //    Speed = speed;
+    //    Health = health;
+    //    BulletSpeed = bulletSpeed;
+    //    Damage = damage;
+    //}
     
     public static float Speed { get; set;  }
     public float Health { get; }
     public static float BulletSpeed { get; set; }
     public static float Damage { get; set; }
-    
+ 
+    public TankType TankType { get; }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TankView : MonoBehaviour
 {
+    public Vector3 prefabPosition;
+
     public float tankSpeed;
     public float tankHealth;
     public static bool fire;
@@ -11,6 +13,8 @@ public class TankView : MonoBehaviour
     public BulletController bulletController;
     public BulletService bulletService;
     public BulletView bulletView;
+    public TankView tankView;
+    public TankType tankType;
 
     void Start()
     {
@@ -40,7 +44,11 @@ public class TankView : MonoBehaviour
         {
             transform.Translate(-1 * tankSpeed, 0, 0);
         }
+
         #endregion
-        
+        prefabPosition = FindObjectOfType<TankView>().transform.position;
+        Position = prefabPosition;
     }
+
+    public static Vector3 Position { get; set; }
 }

@@ -15,8 +15,9 @@ public class TankService : MonoBehaviour
     
     public float speed;
     public BulletService bulletService;
+    public TankScriptableObject[] tankConfig;
 
-    public Vector3 randomPosition;
+    public Vector3 randomPosition; 
 
     public List<TankView> enemyTanks;
 
@@ -48,8 +49,8 @@ public class TankService : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            TankModel model = new TankModel(0.05f, 100f, 100f, 100f);
-            TankController tank = new TankController(model, redTankView);
+            //TankModel model = new TankModel(0.05f, 100f, 100f, 100f);
+            //TankController tank = new TankController(model, redTankView);
             bulletPrefab = bulletService.redBulletView;
             //BulletModel bulletModel = new BulletModel(5f, 100f);
             
@@ -57,16 +58,16 @@ public class TankService : MonoBehaviour
 
         else if (Input.GetKeyDown(KeyCode.B))
         {
-            TankModel model = new TankModel(.02f, 50f, 200f, 100f);
-            TankController tank = new TankController(model, blueTankView);
+            //TankModel model = new TankModel(.02f, 50f, 200f, 100f);
+            //TankController tank = new TankController(model, blueTankView);
             bulletPrefab = bulletService.blueBulletView;
             
         }
 
         else if (Input.GetKeyDown(KeyCode.C))
         {
-            TankModel model = new TankModel(.1f, 200f, 150f, 100f);
-            TankController tank = new TankController(model, greenTankView);
+            //TankModel model = new TankModel(.1f, 200f, 150f, 100f);
+            //TankController tank = new TankController(model, greenTankView);
             bulletPrefab = bulletService.greenBulletView;
             
         }
