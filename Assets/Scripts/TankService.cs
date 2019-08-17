@@ -6,10 +6,7 @@ public class TankService : MonoBehaviour
 {
     private static TankService instance;
     public TankService Instance {  get { return instance; } } 
-
-    public TankView redTankView;
-    public TankView blueTankView;
-    public TankView greenTankView;
+    
     public TankView tankView;
 
     public BulletView bulletPrefab;
@@ -17,6 +14,7 @@ public class TankService : MonoBehaviour
     public float speed;
     public BulletService bulletService;
     public TankScriptableObjectList tankList;
+    public BulletScriptableObjectList bulletList;
 
     public Vector3 randomPosition; 
 
@@ -51,18 +49,22 @@ public class TankService : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-
             TankModel model = new TankModel(tankList.tanks[0]);
+            BulletModel bulletPrefab =new BulletModel(bulletList.bullets[0]);
             InstantiateTank(model);
         }
+
         if (Input.GetKeyDown(KeyCode.B))
         {
             TankModel model = new TankModel(tankList.tanks[1]);
+            BulletModel bulletPrefab = new BulletModel(bulletList.bullets[1]);
             InstantiateTank(model);
         }
+
         if (Input.GetKeyDown(KeyCode.C))
         {
             TankModel model = new TankModel(tankList.tanks[2]);
+            BulletModel bulletPrefab = new BulletModel(bulletList.bullets[2]);
             InstantiateTank(model);
         }
     }

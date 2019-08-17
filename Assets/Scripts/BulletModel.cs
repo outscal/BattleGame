@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class BulletModel 
 {
-    public BulletModel(float speed, float damage)
+    public BulletModel(BulletScriptableObject bulletScriptableObject)
     {
-        Speed = speed;
-        Damage = damage;
+        Speed =bulletScriptableObject.Speed;
+        Damage = bulletScriptableObject.Damage;
     }
 
     public static float Speed { get; set; }
     public float Damage { get; }
+    public BulletType BulletType { get; }
 }

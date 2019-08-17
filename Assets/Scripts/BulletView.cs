@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class BulletView : MonoBehaviour
 {
+    public static int score;
     public float bulletSpeed;
     public float bulletDamage;
 
     public BulletController bulletController;
     public TankService tankService;
-    void Start()
+    private void Start()
     {
+        score = 0;
         bulletSpeed = BulletModel.Speed;
         tankService = GetComponent<TankService>();
     }
@@ -20,6 +22,7 @@ public class BulletView : MonoBehaviour
         if(collision.gameObject.tag=="Enemy")
         {
             Destroy(collision.gameObject);
+            score++;
         }
     }
 

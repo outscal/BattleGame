@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletService : MonoBehaviour
 {
+    private static int score;
     private static BulletService instance;
     public BulletService Instance { get { return instance; } }
     
@@ -15,6 +16,7 @@ public class BulletService : MonoBehaviour
     public BulletModel bulletModel;
     public TankService tankService;
     public BulletController bulletController;
+    public BulletScriptableObjectList bulletLists;
 
     public void Awake()
     {
