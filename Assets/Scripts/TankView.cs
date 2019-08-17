@@ -7,19 +7,14 @@ public class TankView : MonoBehaviour
     public Vector3 prefabPosition;
 
     public float tankSpeed;
-    public float tankHealth;
-    public static bool fire;
-
-    public BulletController bulletController;
-    public BulletService bulletService;
-    public BulletView bulletView;
+    
     public TankView tankView;
     public TankType tankType;
 
     void Start()
     {
         tankSpeed = TankModel.Speed;
-        fire = false;
+        
     }
 
     public void Update()

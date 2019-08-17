@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TankController 
 {
-    public TankController(TankModel tankModel,TankView tankPrefab)
+    public TankController(TankModel tankModel,TankView tankPrefab, BulletService bulletService)
     {
         TankModel = tankModel;
         TankView = GameObject.Instantiate<TankView>(tankPrefab);
@@ -16,5 +16,6 @@ public class TankController
 
     public TankModel TankModel { get; }
     public TankView TankView { get; }
+
 
 }

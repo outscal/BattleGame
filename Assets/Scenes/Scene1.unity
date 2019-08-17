@@ -461,6 +461,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   speed: 100
   bulletService: {fileID: 0}
+  tankList: {fileID: 0}
   randomPosition: {x: 0, y: 0, z: 0}
   enemyTanks:
   - {fileID: 4553284362173375293, guid: 652bf1c055a9d5140821ed86eef34de6, type: 3}

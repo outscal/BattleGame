@@ -10,12 +10,13 @@ public class TankService : MonoBehaviour
     public TankView redTankView;
     public TankView blueTankView;
     public TankView greenTankView;
+    public TankView tankView;
 
     public BulletView bulletPrefab;
     
     public float speed;
     public BulletService bulletService;
-    public TankScriptableObject[] tankConfig;
+    public TankScriptableObjectList tankList;
 
     public Vector3 randomPosition; 
 
@@ -35,6 +36,7 @@ public class TankService : MonoBehaviour
 
     void Start()
     {
+        PlayerPrefs.SetFloat("Score", 0);
         bulletService = GetComponent<BulletService>();
     }
 
@@ -42,41 +44,33 @@ public class TankService : MonoBehaviour
     {
         SpawnTank();
         SpawnBullets();
-        
+        SpawnEnemyTanks();
     }
 
-    void SpawnTank()
+    private void SpawnTank()
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            //TankModel model = new TankModel(0.05f, 100f, 100f, 100f);
-            //TankController tank = new TankController(model, redTankView);
-            bulletPrefab = bulletService.redBulletView;
-            //BulletModel bulletModel = new BulletModel(5f, 100f);
-            
-        }
 
-        else if (Input.GetKeyDown(KeyCode.B))
-        {
-            //TankModel model = new TankModel(.02f, 50f, 200f, 100f);
-            //TankController tank = new TankController(model, blueTankView);
-            bulletPrefab = bulletService.blueBulletView;
-            
+            TankModel model = new TankModel(tankList.tanks[0]);
+            InstantiateTank(model);
         }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            TankModel model = new TankModel(tankList.tanks[1]);
+            InstantiateTank(model);
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            TankModel model = new TankModel(tankList.tanks[2]);
+            InstantiateTank(model);
+        }
+    }
 
-        else if (Input.GetKeyDown(KeyCode.C))
-        {
-            //TankModel model = new TankModel(.1f, 200f, 150f, 100f);
-            //TankController tank = new TankController(model, greenTankView);
-            bulletPrefab = bulletService.greenBulletView;
-            
-        }
+    private void InstantiateTank(TankModel tankmodel)
+    {
+        TankController tankController = new TankController(tankmodel, tankView, bulletService);
 
-        else if(Input.GetKeyDown(KeyCode.O))
-        {
-            SpawnEnemyTanks();
-        }
-        
     }
 
     public void SpawnBullets()
@@ -90,10 +84,15 @@ public class TankService : MonoBehaviour
 
     void SpawnEnemyTanks()
     {
-        randomPosition = new Vector3(Random.Range(-10.0F, 40.0F), 0, Random.Range(-10.0F, 40.0F));
-        int selection = Random.Range(0, enemyTanks.Count);
-        Instantiate(enemyTanks[selection], randomPosition ,Quaternion.identity);
-        BulletController bulletController = new BulletController(bulletPrefab);
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            randomPosition = new Vector3(Random.Range(-10.0F, 40.0F), 0, Random.Range(-10.0F, 40.0F));
+            int selection = Random.Range(0, enemyTanks.Count);
+            Instantiate(enemyTanks[selection], randomPosition, Quaternion.identity);
+            BulletController bulletController = new BulletController(bulletPrefab);
+
+        }
+
     }
 }
     
