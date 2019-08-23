@@ -54,14 +54,14 @@ public class TankService : MonoBehaviour
             InstantiateTank(model);
         }
 
-        if (Input.GetKeyDown(KeyCode.B))
+        else if (Input.GetKeyDown(KeyCode.B))
         {
             TankModel model = new TankModel(tankList.tanks[1]);
             BulletModel bulletPrefab = new BulletModel(bulletList.bullets[1]);
             InstantiateTank(model);
         }
 
-        if (Input.GetKeyDown(KeyCode.C))
+        else if (Input.GetKeyDown(KeyCode.C))
         {
             TankModel model = new TankModel(tankList.tanks[2]);
             BulletModel bulletPrefab = new BulletModel(bulletList.bullets[2]);
