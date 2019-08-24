@@ -7,10 +7,6 @@ public class BulletService : MonoBehaviour
     private static int score;
     private static BulletService instance;
     public BulletService Instance { get { return instance; } }
-    
-    public BulletView redBulletView;
-    public BulletView blueBulletView;
-    public BulletView greenBulletView;
 
     public float speed;
     public BulletModel bulletModel;
@@ -35,5 +31,4 @@ public class BulletService : MonoBehaviour
 
     }
 
-    public Dictionary<string, string> test;
 }

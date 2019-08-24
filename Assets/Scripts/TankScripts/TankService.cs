@@ -41,7 +41,6 @@ public class TankService : MonoBehaviour
     public void Update()
     {
         SpawnTank();
-        SpawnBullets();
         SpawnEnemyTanks();
     }
 
@@ -49,39 +48,31 @@ public class TankService : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            TankModel model = new TankModel(tankList.tanks[0]);
-            BulletModel bulletPrefab =new BulletModel(bulletList.bullets[0]);
-            InstantiateTank(model);
+            SpawnTankType(0, 0);
         }
 
         else if (Input.GetKeyDown(KeyCode.B))
         {
-            TankModel model = new TankModel(tankList.tanks[1]);
-            BulletModel bulletPrefab = new BulletModel(bulletList.bullets[1]);
-            InstantiateTank(model);
+            SpawnTankType(1, 1);
         }
 
         else if (Input.GetKeyDown(KeyCode.C))
         {
-            TankModel model = new TankModel(tankList.tanks[2]);
-            BulletModel bulletPrefab = new BulletModel(bulletList.bullets[2]);
-            InstantiateTank(model);
+            SpawnTankType(2, 2);
         }
+    }
+
+    private void SpawnTankType(int a, int b)
+    {
+        TankModel model = new TankModel(tankList.tanks[a]);
+        //BulletModel bulletPrefab = new BulletModel(bulletList.bullets[b]);
+        InstantiateTank(model);
     }
 
     private void InstantiateTank(TankModel tankmodel)
     {
-        TankController tankController = new TankController(tankmodel, tankView, bulletService);
+        TankController tankController = new TankController(tankmodel, tankView);
 
-    }
-
-    public void SpawnBullets()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            BulletController bulletController = new BulletController(bulletPrefab);
-            //Destroy(bulletController, 2f);
-        }
     }
 
     void SpawnEnemyTanks()

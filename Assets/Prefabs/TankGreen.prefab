@@ -127,10 +127,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e41bff9045652d4fb6e08f9080b52e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabPosition: {x: 0, y: 0, z: 0}
   tankSpeed: 0
-  tankHealth: 0
-  bulletService: {fileID: 0}
-  bulletView: {fileID: 0}
+  tankType: 3
+  tankScriptableObject: {fileID: 11400000, guid: 2959fa8fab59b864689f2ff84d86651e,
+    type: 2}
 --- !u!54 &-728108711652118454
 Rigidbody:
   m_ObjectHideFlags: 0

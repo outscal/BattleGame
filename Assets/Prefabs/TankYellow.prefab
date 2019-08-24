@@ -204,7 +204,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1262450027638644267}
-  - component: {fileID: 4553284362173375293}
+  - component: {fileID: 8940332465238268078}
   - component: {fileID: 8756781623884570367}
   - component: {fileID: 6136172602268875748}
   m_Layer: 0
@@ -229,7 +229,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4553284362173375293
+--- !u!114 &8940332465238268078
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,10 +241,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e41bff9045652d4fb6e08f9080b52e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabPosition: {x: 0, y: 0, z: 0}
   tankSpeed: 0
-  tankHealth: 0
-  bulletService: {fileID: 0}
-  bulletView: {fileID: 0}
+  tankView: {fileID: 0}
+  tankType: 0
 --- !u!54 &8756781623884570367
 Rigidbody:
   m_ObjectHideFlags: 0

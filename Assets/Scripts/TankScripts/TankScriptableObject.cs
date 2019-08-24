@@ -8,6 +8,7 @@ public class TankScriptableObject : ScriptableObject
     public string TankName;
     public float Speed;
     public float Health;
+    public KeyCode FireKey;
 }
 
 [CreateAssetMenu(fileName = "Assets/ScriptableObjects/TankScriptableObjectList", menuName = "ScriptableObjects/Tank Lists")]

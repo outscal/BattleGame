@@ -7,18 +7,18 @@ public class TankView : MonoBehaviour
     public Vector3 prefabPosition;
 
     public float tankSpeed;
-    
-    public TankView tankView;
     public TankType tankType;
+    public TankScriptableObject tankScriptableObject;
 
     void Start()
     {
         tankSpeed = TankModel.Speed;
-        
     }
 
     public void Update()
     {
+        SpawnBullets();
+
         #region Movement
         if (Input.GetKey(KeyCode.D))
         {
@@ -43,6 +43,16 @@ public class TankView : MonoBehaviour
         #endregion
         prefabPosition = FindObjectOfType<TankView>().transform.position;
         Position = prefabPosition;
+    }
+
+
+    public void SpawnBullets()
+    {
+        if (Input.GetKeyDown(tankScriptableObject.FireKey))
+        {
+            //BulletController bulletController = new BulletController(bulletPrefab);
+            //Destroy(bulletController, 2f);
+        }
     }
 
     public static Vector3 Position { get; set; }
