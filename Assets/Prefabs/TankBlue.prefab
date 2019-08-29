@@ -243,8 +243,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabPosition: {x: 0, y: 0, z: 0}
   tankSpeed: 0
-  tankView: {fileID: 0}
-  tankType: 2
+  tankScriptableObject: {fileID: 11400000, guid: 29a1e3fc881a2c14a8b0659fdc214d65,
+    type: 2}
 --- !u!54 &-7050212604436197022
 Rigidbody:
   m_ObjectHideFlags: 0

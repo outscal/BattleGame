@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d76582c8020613f41bdfa1d930a5a251, type: 3}
   m_Name: Tank 1
   m_EditorClassIdentifier: 
-  tankType: 1
-  TankName: Red
-  Speed: 0
-  Health: 0
+  tankType: 3
+  TankName: 
+  Speed: 15
+  Health: 200
+  FireKey: 0

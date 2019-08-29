@@ -418,14 +418,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4a7fd8497c72d44a90023e2ad57fb24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redBulletView: {fileID: -6954580411717822910, guid: 53a7699cdfd848049bd58f61bd392765,
-    type: 3}
-  blueBulletView: {fileID: 811552150228519913, guid: bfcafcf20cb941f44a0956655dd45a6f,
-    type: 3}
-  greenBulletView: {fileID: 7324207228717858416, guid: 8898cd15c2db2d74fbacac758062e477,
-    type: 3}
   speed: 10
   tankService: {fileID: 0}
+  bulletLists: {fileID: 0}
 --- !u!4 &544574864
 Transform:
   m_ObjectHideFlags: 0
@@ -452,17 +447,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb8181f9df073a944ab82a8a996fbe7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redTankView: {fileID: 4553284362173375293, guid: 773945c53aaa2fe4b861508a2a6d8a60,
-    type: 3}
-  blueTankView: {fileID: -2789261847878558460, guid: bafa83a9c7fc92a48a1f6d97099f6acc,
-    type: 3}
-  greenTankView: {fileID: 2771625314397037834, guid: b259b629af903ce4781b3af564560174,
+  tankView: {fileID: 4553284362173375293, guid: 773945c53aaa2fe4b861508a2a6d8a60,
     type: 3}
   bulletPrefab: {fileID: 0}
   speed: 100
   bulletService: {fileID: 0}
-  tankList: {fileID: 0}
+  tankList: {fileID: 11400000, guid: 15e91eef78e747c48b6cc3221aeece63, type: 2}
+  bulletList: {fileID: 0}
   randomPosition: {x: 0, y: 0, z: 0}
   enemyTanks:
-  - {fileID: 4553284362173375293, guid: 652bf1c055a9d5140821ed86eef34de6, type: 3}
+  - {fileID: 8940332465238268078, guid: 652bf1c055a9d5140821ed86eef34de6, type: 3}
   - {fileID: 4553284362173375293, guid: f2c89911c896565448e16c9c2b53fa0b, type: 3}

@@ -6,11 +6,15 @@ public class TankController
 {
     public TankController(TankModel tankModel,TankView tankPrefab)
     {
-        TankModel = tankModel;
         TankView = GameObject.Instantiate<TankView>(tankPrefab);
+        TankModel = tankModel;
+        //Debug.Log("Tank Type"+TankType.);
+        //TankView.Speed = tankModel.Speed;
+        //TankView.Health = tankModel.Health;
+        //TankView.Type = tankModel.Type;
     }
 
-    public TankModel TankModel { get; set; }
-    public TankView TankView { get; set; }
+    public TankModel TankModel { get;  }
+    public TankView TankView { get; }
     
 }

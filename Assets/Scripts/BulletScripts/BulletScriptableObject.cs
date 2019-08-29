@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Assets/ScriptableObjects/Bullet", menuName = "ScriptableObjects/Tank")]
+[CreateAssetMenu(fileName = "Assets/ScriptableObjects/Bullet", menuName = "ScriptableObjects/Bullets")]
 public class BulletScriptableObject : ScriptableObject
 {
     public BulletType bulletType;

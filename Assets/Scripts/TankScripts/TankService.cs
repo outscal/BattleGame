@@ -49,30 +49,34 @@ public class TankService : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M))
         {
             SpawnTankType(0, 0);
+            //BulletModel bulletPrefab = new BulletModel(bulletList.bullets[0]);
+
         }
 
-        else if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B))
         {
             SpawnTankType(1, 1);
+            //BulletModel bulletPrefab = new BulletModel(bulletList.bullets[1]);
+            
         }
 
-        else if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             SpawnTankType(2, 2);
+            //BulletModel bulletPrefab = new BulletModel(bulletList.bullets[2]);
+            
         }
     }
 
-    private void SpawnTankType(int a, int b)
+    private void SpawnTankType(int a,int b)
     {
         TankModel model = new TankModel(tankList.tanks[a]);
-        //BulletModel bulletPrefab = new BulletModel(bulletList.bullets[b]);
         InstantiateTank(model);
     }
 
     private void InstantiateTank(TankModel tankmodel)
     {
         TankController tankController = new TankController(tankmodel, tankView);
-
     }
 
     void SpawnEnemyTanks()

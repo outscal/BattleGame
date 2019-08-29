@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class TankView : MonoBehaviour
 {
+    private TankType tankType;
     public Vector3 prefabPosition;
-
+    //private Rigidbody rigidbody;
     public float tankSpeed;
-    public TankType tankType;
-    public TankScriptableObject tankScriptableObject;
+    //public TankScriptableObject tankScriptableObject;
 
     void Start()
     {
+        //rigidbody = GetComponent<Rigidbody>();
         tankSpeed = TankModel.Speed;
     }
 
@@ -48,7 +50,7 @@ public class TankView : MonoBehaviour
 
     public void SpawnBullets()
     {
-        if (Input.GetKeyDown(tankScriptableObject.FireKey))
+        //if (Input.GetKeyDown(tankScriptableObject.FireKey))
         {
             //BulletController bulletController = new BulletController(bulletPrefab);
             //Destroy(bulletController, 2f);

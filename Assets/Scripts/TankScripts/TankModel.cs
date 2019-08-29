@@ -9,10 +9,9 @@ public class TankModel
         Speed = tankscriptableobject.Speed;
         Health = tankscriptableobject.Health;
         TankType = tankscriptableobject.tankType;
-
+        Debug.Log("Tank Type"+TankType);
     }
 
-    
     //public TankModel(TankType tankType,float speed, float health,float bulletSpeed,float damage)
     //{
     //    Speed = speed;
@@ -25,6 +24,5 @@ public class TankModel
     public float Health { get; }
     public static float BulletSpeed { get; set; }
     public static float Damage { get; set; }
- 
     public TankType TankType { get; }
 }
