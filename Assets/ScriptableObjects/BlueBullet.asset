@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d76582c8020613f41bdfa1d930a5a251, type: 3}
-  m_Name: Tank 1
+  m_Script: {fileID: 11500000, guid: 6a6f5627904f1df4db55fae805cafbca, type: 3}
+  m_Name: BlueBullet
   m_EditorClassIdentifier: 
-  tankType: 3
-  TankName: 
-  Speed: 15
-  Health: 200
-  FireKey: 0
+  bulletType: 2
+  Speed: 4
+  Damage: 50

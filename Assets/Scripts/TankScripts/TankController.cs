@@ -8,6 +8,7 @@ public class TankController
     {
         TankView = GameObject.Instantiate<TankView>(tankPrefab);
         TankModel = tankModel;
+        
         //Debug.Log("Tank Type"+TankType.);
         //TankView.Speed = tankModel.Speed;
         //TankView.Health = tankModel.Health;
@@ -16,5 +17,6 @@ public class TankController
 
     public TankModel TankModel { get;  }
     public TankView TankView { get; }
+    
     
 }

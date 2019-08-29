@@ -5,11 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class TankView : MonoBehaviour
 {
-    private TankType tankType;
     public Vector3 prefabPosition;
+    private BulletController bulletController;
     //private Rigidbody rigidbody;
     public float tankSpeed;
-    //public TankScriptableObject tankScriptableObject;
+    public TankScriptableObject tankScriptableObject;
+    public BulletView bulletView;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class TankView : MonoBehaviour
 
     public void Update()
     {
-        SpawnBullets();
+        //SpawnBullets();
 
         #region Movement
         if (Input.GetKey(KeyCode.D))
@@ -48,12 +49,13 @@ public class TankView : MonoBehaviour
     }
 
 
-    public void SpawnBullets()
+    public void SpawnBullets(BulletModel bulletPrefab)
     {
-        //if (Input.GetKeyDown(tankScriptableObject.FireKey))
+        if (Input.GetKeyDown(tankScriptableObject.FireKey))
         {
-            //BulletController bulletController = new BulletController(bulletPrefab);
+            BulletController bulletController = new BulletController(bulletPrefab,bulletView/*,Position,Quaternion.identity*/);
             //Destroy(bulletController, 2f);
+            
         }
     }
 

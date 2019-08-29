@@ -9,10 +9,8 @@ public class TankService : MonoBehaviour
     
     public TankView tankView;
 
-    public BulletView bulletPrefab;
-    
     public float speed;
-    public BulletService bulletService;
+    //public BulletService bulletService;
     public TankScriptableObjectList tankList;
     public BulletScriptableObjectList bulletList;
 
@@ -35,7 +33,7 @@ public class TankService : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetFloat("Score", 0);
-        bulletService = GetComponent<BulletService>();
+        //bulletService = GetComponent<BulletService>();
     }
 
     public void Update()
@@ -70,8 +68,10 @@ public class TankService : MonoBehaviour
 
     private void SpawnTankType(int a,int b)
     {
-        TankModel model = new TankModel(tankList.tanks[a]);
-        InstantiateTank(model);
+        TankModel tankModel = new TankModel(tankList.tanks[a]);
+        BulletModel bulletModel = new BulletModel(bulletList.bullets[b]);
+        InstantiateTank(tankModel);
+        tankView.SpawnBullets(bulletModel);
     }
 
     private void InstantiateTank(TankModel tankmodel)
@@ -86,7 +86,7 @@ public class TankService : MonoBehaviour
             randomPosition = new Vector3(Random.Range(-10.0F, 40.0F), 0, Random.Range(-10.0F, 40.0F));
             int selection = Random.Range(0, enemyTanks.Count);
             Instantiate(enemyTanks[selection], randomPosition, Quaternion.identity);
-            BulletController bulletController = new BulletController(bulletPrefab);
+           // BulletController bulletController = new BulletController(bulletPrefab);
 
         }
 

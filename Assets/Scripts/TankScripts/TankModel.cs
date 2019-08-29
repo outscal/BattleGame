@@ -9,6 +9,7 @@ public class TankModel
         Speed = tankscriptableobject.Speed;
         Health = tankscriptableobject.Health;
         TankType = tankscriptableobject.tankType;
+        
         Debug.Log("Tank Type"+TankType);
     }
 

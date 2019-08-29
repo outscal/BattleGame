@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d76582c8020613f41bdfa1d930a5a251, type: 3}
-  m_Name: Tank 2
+  m_Name: RedTank
   m_EditorClassIdentifier: 
-  tankType: 2
+  tankType: 1
   TankName: 
-  Speed: 5
-  Health: 50
-  FireKey: 0
+  Speed: 3
+  Health: 100
+  FireKey: 102

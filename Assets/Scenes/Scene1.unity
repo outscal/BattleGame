@@ -449,11 +449,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tankView: {fileID: 4553284362173375293, guid: 773945c53aaa2fe4b861508a2a6d8a60,
     type: 3}
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 811552150228519913, guid: bfcafcf20cb941f44a0956655dd45a6f,
+    type: 3}
   speed: 100
   bulletService: {fileID: 0}
   tankList: {fileID: 11400000, guid: 15e91eef78e747c48b6cc3221aeece63, type: 2}
-  bulletList: {fileID: 0}
+  bulletList: {fileID: 11400000, guid: 36ab1d9d72b244b4295a94fb2d9d5c9d, type: 2}
   randomPosition: {x: 0, y: 0, z: 0}
   enemyTanks:
   - {fileID: 8940332465238268078, guid: 652bf1c055a9d5140821ed86eef34de6, type: 3}
