@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class TankView : MonoBehaviour
+public class TankView : MonoBehaviour , IDamagable
 {
     public Vector3 prefabPosition;
     private BulletController bulletController;
@@ -11,6 +11,7 @@ public class TankView : MonoBehaviour
     public float tankSpeed;
     public TankScriptableObject tankScriptableObject;
     public BulletView bulletView;
+    public TankController tankController;
 
     void Start()
     {
@@ -51,14 +52,23 @@ public class TankView : MonoBehaviour
 
     public void SpawnBullets(BulletModel bulletPrefab)
     {
-         
-        
+         if(Input.GetKeyDown(KeyCode.F))
+        {
             Debug.Log("Fire");
-            BulletController bulletController = new BulletController(bulletPrefab,bulletView/*,Position,Quaternion.identity*/);
-            //Destroy(bulletController, 2f);
-            
+            tankcontroller.Fire();
+        }
+        //BulletController bulletController = new BulletController(bulletPrefab,bulletView/*,Position,Quaternion.identity*/);
+        //Destroy(bulletController, 2f);
+
+
+    }
+
+    public void TakeDamage(float damage)
+    {
+        tankController.Damage(damage);
         
     }
 
+    
     public static Vector3 Position { get; set; }
 }

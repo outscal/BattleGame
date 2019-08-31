@@ -9,7 +9,7 @@ public class BulletController
 
     public BulletController(BulletModel bulletModel,BulletView bulletPrefab)
     {
-        BulletView = GameObject.Instantiate<BulletView>(bulletPrefab, TankView.Position + new Vector3(0,1,2),Quaternion.identity);
+        BulletView = GameObject.Instantiate<BulletView>(bulletPrefab,  + new Vector3(0,1,2),Quaternion.identity);
         Rigidbody instBulletRigidBody = BulletView.GetComponent<Rigidbody>();
         instBulletRigidBody.AddForce(Vector3.forward * TankModel.BulletSpeed);
         //BulletView.DestroyBullet();

@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletService : MonoBehaviour
+public class BulletService : GenericSingleton<BulletService>
 {
-    private static int score;
-    private static BulletService instance;
-    public BulletService Instance { get { return instance; } }
+    protected override void Awake()
+    {
+        base.Awake();
+    }
 
+    private static int score;
+    
     public float speed;
     public BulletModel bulletModel;
     public BulletView bulletView;

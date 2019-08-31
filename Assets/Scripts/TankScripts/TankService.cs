@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankService : MonoBehaviour
+public class TankService : GenericSingleton<TankService>
 {
-    private static TankService instance;
-    public TankService Instance {  get { return instance; } } 
     
     public TankView tankView;
 
@@ -18,18 +16,10 @@ public class TankService : MonoBehaviour
 
     public List<TankView> enemyTanks;
 
-    public void Awake()
+    protected override void Awake()
     {
-        if(instance ==null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(this);
-        }
+        base.Awake();
     }
-
     void Start()
     {
         PlayerPrefs.SetFloat("Score", 0);
