@@ -419,8 +419,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  tankService: {fileID: 0}
-  bulletLists: {fileID: 0}
+  bulletView: {fileID: 811552150228519913, guid: bfcafcf20cb941f44a0956655dd45a6f,
+    type: 3}
+  bulletLists: {fileID: 11400000, guid: 36ab1d9d72b244b4295a94fb2d9d5c9d, type: 2}
 --- !u!4 &544574864
 Transform:
   m_ObjectHideFlags: 0
@@ -449,10 +450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tankView: {fileID: 4553284362173375293, guid: 773945c53aaa2fe4b861508a2a6d8a60,
     type: 3}
-  bulletPrefab: {fileID: 811552150228519913, guid: bfcafcf20cb941f44a0956655dd45a6f,
-    type: 3}
-  speed: 100
-  bulletService: {fileID: 0}
+  speed: 2
   tankList: {fileID: 11400000, guid: 15e91eef78e747c48b6cc3221aeece63, type: 2}
   bulletList: {fileID: 11400000, guid: 36ab1d9d72b244b4295a94fb2d9d5c9d, type: 2}
   randomPosition: {x: 0, y: 0, z: 0}

@@ -10,7 +10,7 @@ public class BulletService : MonoBehaviour
 
     public float speed;
     public BulletModel bulletModel;
-    public TankService tankService;
+    public BulletView bulletView;
     public BulletController bulletController;
     public BulletScriptableObjectList bulletLists;
 

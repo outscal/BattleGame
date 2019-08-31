@@ -125,3 +125,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 0
   bulletDamage: 0
+  tankService: {fileID: 0}

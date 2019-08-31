@@ -9,7 +9,7 @@ public class TankModel
         Speed = tankscriptableobject.Speed;
         Health = tankscriptableobject.Health;
         TankType = tankscriptableobject.tankType;
-        
+        //Position = TankView.transform.position;
         Debug.Log("Tank Type"+TankType);
     }
 
@@ -26,4 +26,5 @@ public class TankModel
     public static float BulletSpeed { get; set; }
     public static float Damage { get; set; }
     public TankType TankType { get; }
+    public static Vector3 Position { get; set; }
 }

@@ -20,7 +20,7 @@ public class TankView : MonoBehaviour
 
     public void Update()
     {
-        //SpawnBullets();
+        //SpawnBullets(BulletModel bulletPrefab);
 
         #region Movement
         if (Input.GetKey(KeyCode.D))
@@ -51,12 +51,13 @@ public class TankView : MonoBehaviour
 
     public void SpawnBullets(BulletModel bulletPrefab)
     {
-        if (Input.GetKeyDown(tankScriptableObject.FireKey))
-        {
+         
+        
+            Debug.Log("Fire");
             BulletController bulletController = new BulletController(bulletPrefab,bulletView/*,Position,Quaternion.identity*/);
             //Destroy(bulletController, 2f);
             
-        }
+        
     }
 
     public static Vector3 Position { get; set; }
