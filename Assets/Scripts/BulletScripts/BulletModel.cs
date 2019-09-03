@@ -8,9 +8,11 @@ public class BulletModel
     {
         Speed =bulletScriptableObject.Speed;
         Damage = bulletScriptableObject.Damage;
+        BulletType = bulletScriptableObject.bulletType;
+        Debug.Log("Bullet Type"+BulletType);
     }
 
     public static float Speed { get; set; }
     public float Damage { get; }
-    public BulletType BulletType { get; }
+    public BulletType BulletType { get; set; }
 }

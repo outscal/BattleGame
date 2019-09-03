@@ -4,34 +4,29 @@ using UnityEngine;
 
 public class BulletService : GenericSingleton<BulletService>
 {
-    protected override void Awake()
-    {
-        base.Awake();
-    }
-
+    public TankService tankService;
     private static int score;
-    
+
     public float speed;
     public BulletModel bulletModel;
     public BulletView bulletView;
     public BulletController bulletController;
     public BulletScriptableObjectList bulletLists;
 
-    public void Awake()
+    protected override void Awake()
     {
-        if(instance ==null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(this);
-        }
+        base.Awake();
+        tankService = GetComponent<TankService>();
     }
-    
-    void GetBulletsData()
-    {
 
+    
+    public BulletController SpawnBulletType()
+    {
+        Debug.Log("Any" + tankService.tank_no);
+        BulletModel bulletModel = new BulletModel(bulletLists.bullets[tankService.tank_no]);
+        BulletController bulletController = new BulletController(bulletModel, bulletView);
+        return bulletController;
     }
+
 
 }

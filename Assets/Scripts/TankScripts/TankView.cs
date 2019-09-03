@@ -1,22 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [RequireComponent(typeof(Rigidbody))]
 public class TankView : MonoBehaviour , IDamagable
 {
     public Vector3 prefabPosition;
-    private BulletController bulletController;
-    //private Rigidbody rigidbody;
+    //private BulletController bulletController;
+    Rigidbody rigidbody;
     public float tankSpeed;
-    public TankScriptableObject tankScriptableObject;
+    //public TankScriptableObject tankScriptableObject;
     public BulletView bulletView;
-    public TankController tankController;
+    private TankController tankController;
 
     void Start()
     {
-        //rigidbody = GetComponent<Rigidbody>();
+        rigidbody = GetComponent<Rigidbody>();
         tankSpeed = TankModel.Speed;
+        //tankController = GetComponent<TankController>();
     }
 
     public void Update()
@@ -43,32 +45,36 @@ public class TankView : MonoBehaviour , IDamagable
         {
             transform.Translate(-1 * tankSpeed, 0, 0);
         }
-
         #endregion
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Debug.Log("Fire");
+            tankController.Fire();
+        }
+
         prefabPosition = FindObjectOfType<TankView>().transform.position;
         Position = prefabPosition;
     }
 
-
-    public void SpawnBullets(BulletModel bulletPrefab)
-    {
-         if(Input.GetKeyDown(KeyCode.F))
-        {
-            Debug.Log("Fire");
-            tankcontroller.Fire();
-        }
+    //public void SpawnBullets(BulletModel bulletPrefab)
+    //{
+        
         //BulletController bulletController = new BulletController(bulletPrefab,bulletView/*,Position,Quaternion.identity*/);
         //Destroy(bulletController, 2f);
 
 
-    }
+    //}
 
     public void TakeDamage(float damage)
     {
         tankController.Damage(damage);
-        
     }
 
+    public void InitTankController(TankController controller)
+    {
+        this.tankController = controller;
+    }
     
     public static Vector3 Position { get; set; }
 }

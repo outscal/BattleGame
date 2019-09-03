@@ -10,9 +10,10 @@ public class TankService : GenericSingleton<TankService>
     public float speed;
     //public BulletService bulletService;
     public TankScriptableObjectList tankList;
-    public BulletScriptableObjectList bulletList;
-
-    public Vector3 randomPosition; 
+    //public BulletScriptableObjectList bulletList;
+    public BulletService bulletService;
+    public Vector3 randomPosition;
+    public int tank_no;
 
     public List<TankView> enemyTanks;
 
@@ -23,7 +24,7 @@ public class TankService : GenericSingleton<TankService>
     void Start()
     {
         PlayerPrefs.SetFloat("Score", 0);
-        //bulletService = GetComponent<BulletService>();
+        bulletService = GetComponent<BulletService>();
     }
 
     public void Update()
@@ -36,28 +37,30 @@ public class TankService : GenericSingleton<TankService>
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            SpawnTankType(0, 0);
+            tank_no = 0;
+            SpawnTankType(tank_no);
+            //bulletService.SpawnBulletType(0);
         }
 
         if (Input.GetKeyDown(KeyCode.B))
         {
-            SpawnTankType(1, 1);
+            tank_no = 1;
+            SpawnTankType(tank_no);
+            //bulletService.SpawnBulletType(1);
         }
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-            SpawnTankType(2, 2);
+            tank_no = 2;
+            SpawnTankType(tank_no);
+            //bulletService.SpawnBulletType(2);
         }
     }
 
-    private void SpawnTankType(int a,int b)
+    public void SpawnTankType(int a)
     {
         TankModel tankModel = new TankModel(tankList.tanks[a]);
-        BulletModel bulletModel = new BulletModel(bulletList.bullets[b]);
         InstantiateTank(tankModel);
-
-        
-            tankView.SpawnBullets(bulletModel);
         
     }
 

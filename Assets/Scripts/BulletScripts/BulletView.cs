@@ -31,5 +31,10 @@ public class BulletView : MonoBehaviour
         Destroy(gameObject,2f);
     }
 
+    public void InitBulletController(BulletController controller)
+    {
+        this.bulletController = controller;
+    }
+
     public BulletController BulletController { get; set; }
 }

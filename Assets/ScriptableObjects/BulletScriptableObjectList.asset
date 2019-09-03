@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BulletScriptableObjectList
   bullets:
   - {fileID: 11400000, guid: 372c4c34eb74a9343a347ff090ee5852, type: 2}
-  - {fileID: 11400000, guid: ddffdfe4089f8094fa4dfee30f557272, type: 2}
   - {fileID: 11400000, guid: 94f068415c25c7b408c7abe0cd89eeec, type: 2}
+  - {fileID: 11400000, guid: ddffdfe4089f8094fa4dfee30f557272, type: 2}
