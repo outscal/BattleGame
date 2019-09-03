@@ -19,10 +19,8 @@ public class BulletService : GenericSingleton<BulletService>
         tankService = GetComponent<TankService>();
     }
 
-    
     public BulletController SpawnBulletType()
     {
-        Debug.Log("Any" + tankService.tank_no);
         BulletModel bulletModel = new BulletModel(bulletLists.bullets[tankService.tank_no]);
         BulletController bulletController = new BulletController(bulletModel, bulletView);
         return bulletController;

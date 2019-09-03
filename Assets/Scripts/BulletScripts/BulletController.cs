@@ -12,20 +12,17 @@ public class BulletController
         BulletView = GameObject.Instantiate<BulletView>(bulletPrefab);
         Rigidbody instBulletRigidBody = BulletView.GetComponent<Rigidbody>();
         instBulletRigidBody.AddForce(Vector3.forward * TankModel.BulletSpeed);
+        Debug.Log("Speed "+TankModel.Speed);
         //BulletView.DestroyBullet();
         //Debug.Log("Bullet Spawned");
         BulletModel = bulletModel;
         BulletView.InitBulletController(this);
     }
 
-    public void Fire()
+   
+    public void SetPosition(Vector3 transform, Quaternion rotation)
     {
-        Debug.Log("Fire");
-    }
-
-    public void SetPosition(Vector3 transformArg, Quaternion rotation)
-    {
-        BulletView.transform.position = transformArg;
+        BulletView.transform.position = transform;
         BulletView.transform.rotation = rotation;
     }
 

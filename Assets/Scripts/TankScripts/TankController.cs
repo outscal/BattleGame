@@ -44,6 +44,4 @@ public class TankController
     public TankModel TankModel { get;  }
     public TankView TankView { get; }
     
-    
-    
 }

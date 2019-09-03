@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BlueBullet
   m_EditorClassIdentifier: 
   bulletType: 2
-  Speed: 4
+  Speed: 100
   Damage: 50

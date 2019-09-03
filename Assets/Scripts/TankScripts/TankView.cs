@@ -8,7 +8,6 @@ public class TankView : MonoBehaviour , IDamagable
 {
     public Vector3 prefabPosition;
     //private BulletController bulletController;
-    Rigidbody rigidbody;
     public float tankSpeed;
     //public TankScriptableObject tankScriptableObject;
     public BulletView bulletView;
@@ -16,7 +15,7 @@ public class TankView : MonoBehaviour , IDamagable
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        //rigidbody = GetComponent<Rigidbody>();
         tankSpeed = TankModel.Speed;
         //tankController = GetComponent<TankController>();
     }

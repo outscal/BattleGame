@@ -9,12 +9,12 @@ public class BulletView : MonoBehaviour
     public float bulletDamage;
 
     public BulletController bulletController;
-    public TankService tankService;
+    //public TankService tankService;
     private void Start()
     {
         score = 0;
         bulletSpeed = BulletModel.Speed;
-        tankService = GetComponent<TankService>();
+        //tankService = GetComponent<TankService>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -24,6 +24,13 @@ public class BulletView : MonoBehaviour
             Destroy(collision.gameObject);
             score++;
         }
+    }
+
+    void Update()
+    {
+        transform.Translate(transform.forward * bulletSpeed * Time.deltaTime);
+        Debug.Log(bulletSpeed);
+        Destroy(gameObject, 0.5f);
     }
 
     public void DestroyBullet()
