@@ -9,28 +9,31 @@ public class BulletView : MonoBehaviour
     public float bulletDamage;
 
     public BulletController bulletController;
-    //public TankService tankService;
     private void Start()
     {
         score = 0;
         bulletSpeed = BulletModel.Speed;
-        //tankService = GetComponent<TankService>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        if(collision.gameObject.tag=="Enemy")
+        if(collider.GetComponent<IDamagable>()!=null)
         {
-            Destroy(collision.gameObject);
-            score++;
+            Debug.Log("Collision");
+            IDamagable damagable = collider.GetComponent<IDamagable>();
+            damagable.TakeDamage(bulletController.BulletModel.Damage);
+            //Destroy(collision.gameObject);
+            //Destroy(gameObject);
+            //score++;
         }
     }
+
 
     void Update()
     {
         transform.Translate(transform.forward * bulletSpeed * Time.deltaTime);
         Debug.Log(bulletSpeed);
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject, 5f);
     }
 
     public void DestroyBullet()

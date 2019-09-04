@@ -36,8 +36,8 @@ public class TankController
 
     public void Fire()
     {
-        BulletController bulletController = BulletService.Instance.SpawnBulletType(/*(int)(TankModel.TankType)*/);
-        Vector3 Bullet_position = TankView.transform.position + new Vector3(0f,2.2f,0f);
+        BulletController bulletController = BulletService.Instance.SpawnBulletType();
+        Vector3 Bullet_position = TankView.transform.position + new Vector3(0f,1.2f,3f);
         bulletController.SetPosition(Bullet_position, TankView.transform.rotation);
     }
 

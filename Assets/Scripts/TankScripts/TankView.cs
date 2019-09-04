@@ -58,11 +58,8 @@ public class TankView : MonoBehaviour , IDamagable
 
     //public void SpawnBullets(BulletModel bulletPrefab)
     //{
-        
         //BulletController bulletController = new BulletController(bulletPrefab,bulletView/*,Position,Quaternion.identity*/);
         //Destroy(bulletController, 2f);
-
-
     //}
 
     public void TakeDamage(float damage)
