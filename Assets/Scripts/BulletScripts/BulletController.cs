@@ -18,7 +18,6 @@ public class BulletController
         BulletModel = bulletModel;
         BulletView.InitBulletController(this);
     }
-
    
     public void SetPosition(Vector3 transform, Quaternion rotation)
     {

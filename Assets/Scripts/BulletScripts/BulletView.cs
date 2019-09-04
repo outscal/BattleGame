@@ -15,12 +15,12 @@ public class BulletView : MonoBehaviour
         bulletSpeed = BulletModel.Speed;
     }
 
-    private void OnTriggerEnter(Collider collider)
+    private void OnCollisionEnter(Collision collision)
     {
-        if(collider.GetComponent<IDamagable>()!=null)
+        if(collision.gameObject.GetComponent<IDamagable>()!=null)
         {
             Debug.Log("Collision");
-            IDamagable damagable = collider.GetComponent<IDamagable>();
+            IDamagable damagable = collision.gameObject.GetComponent<TankView>();
             damagable.TakeDamage(bulletController.BulletModel.Damage);
             //Destroy(collision.gameObject);
             //Destroy(gameObject);
@@ -32,7 +32,6 @@ public class BulletView : MonoBehaviour
     void Update()
     {
         transform.Translate(transform.forward * bulletSpeed * Time.deltaTime);
-        Debug.Log(bulletSpeed);
         Destroy(gameObject, 5f);
     }
 

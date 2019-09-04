@@ -13,6 +13,6 @@ public class BulletModel
     }
 
     public static float Speed { get; set; }
-    public float Damage { get; }
+    public float Damage { get; set; }
     public BulletType BulletType { get; set; }
 }

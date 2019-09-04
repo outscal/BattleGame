@@ -9,7 +9,6 @@ public class TankView : MonoBehaviour , IDamagable
     public Vector3 prefabPosition;
     //private BulletController bulletController;
     public float tankSpeed;
-    //public TankScriptableObject tankScriptableObject;
     public BulletView bulletView;
     private TankController tankController;
 
@@ -17,13 +16,11 @@ public class TankView : MonoBehaviour , IDamagable
     {
         //rigidbody = GetComponent<Rigidbody>();
         tankSpeed = TankModel.Speed;
-        //tankController = GetComponent<TankController>();
     }
 
     public void Update()
     {
-        //SpawnBullets(BulletModel bulletPrefab);
-
+        
         #region Movement
         if (Input.GetKey(KeyCode.D))
         {
@@ -55,16 +52,11 @@ public class TankView : MonoBehaviour , IDamagable
         prefabPosition = FindObjectOfType<TankView>().transform.position;
         Position = prefabPosition;
     }
-
-    //public void SpawnBullets(BulletModel bulletPrefab)
-    //{
-        //BulletController bulletController = new BulletController(bulletPrefab,bulletView/*,Position,Quaternion.identity*/);
-        //Destroy(bulletController, 2f);
-    //}
-
+    
     public void TakeDamage(float damage)
     {
         tankController.Damage(damage);
+        Debug.Log("Damage Caused: "+damage);
     }
 
     public void InitTankController(TankController controller)

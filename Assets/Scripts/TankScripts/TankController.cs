@@ -31,9 +31,7 @@ public class TankController
     {
         Vector3 currentPosition = TankView.transform.position;
     }
-
-
-
+    
     public void Fire()
     {
         BulletController bulletController = BulletService.Instance.SpawnBulletType();
