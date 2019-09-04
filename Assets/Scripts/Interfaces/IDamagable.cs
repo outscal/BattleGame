@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IDamagable
 {
-    void TakeDamage(float Damage);
+    void TakeDamage(float Damage/*,TankType tankType*/);
 }

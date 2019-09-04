@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class BulletView : MonoBehaviour
+public class BulletView : MonoBehaviour , IDamagable
 {
     public static int score;
     public float bulletSpeed;
@@ -17,7 +18,7 @@ public class BulletView : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.GetComponent<IDamagable>()!=null)
+        if(collision.gameObject.GetComponent<TankView>()!=null)
         {
             Debug.Log("Collision");
             IDamagable damagable = collision.gameObject.GetComponent<TankView>();
@@ -28,6 +29,11 @@ public class BulletView : MonoBehaviour
         }
     }
 
+    public void TakeDamage(float damage)
+    {
+        Destroy(this.gameObject);
+        Debug.Log("Damage Caused: " + damage);
+    }
 
     void Update()
     {
