@@ -19,13 +19,14 @@ public class BulletController
         BulletView.InitBulletController(this);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void Collision(Collision collision)
     {
         IDamagable damagable = collision.gameObject.GetComponent<IDamagable>();
         if (damagable != null)
         {
             Debug.Log("Collision");
             damagable.TakeDamage(BulletModel.Damage);
+            
             //Destroy(collision.gameObject);
             //Destroy(gameObject);
             //score++;

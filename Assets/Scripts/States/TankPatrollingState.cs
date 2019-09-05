@@ -26,7 +26,6 @@ public class TankPatrollingState : TankState
         {
             //tankView.ChangeState(GetComponent<TankChasingState>());
             tankView.ChangeState(tankView.chasingState);
-
         }
     }
 }

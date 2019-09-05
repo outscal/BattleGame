@@ -207,6 +207,8 @@ GameObject:
   - component: {fileID: 8940332465238268078}
   - component: {fileID: 8756781623884570367}
   - component: {fileID: 6136172602268875748}
+  - component: {fileID: 4281838789535654568}
+  - component: {fileID: 8054274550483506532}
   m_Layer: 0
   m_Name: TankYellow
   m_TagString: Enemy
@@ -243,6 +245,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabPosition: {x: 0, y: 0, z: 0}
   tankSpeed: 0
+  bulletView: {fileID: 0}
+  tankStates: []
+  patrollingState: {fileID: 4281838789535654568}
+  chasingState: {fileID: 8054274550483506532}
+  startingState: {fileID: 4281838789535654568}
 --- !u!54 &8756781623884570367
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -272,6 +279,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9382515, y: 1.3232903, z: 1.8946748}
   m_Center: {x: -0.09053779, y: 0.7517526, z: 0.0055982172}
+--- !u!114 &4281838789535654568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262450027638473675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5831e25f1f896ac408d5cdf992412ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &8054274550483506532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262450027638473675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab7beea19e64bf4081b5e1ccd9e0fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0, g: 0, b: 0, a: 0}
+  differentColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1262450027638473677
 GameObject:
   m_ObjectHideFlags: 0

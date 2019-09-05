@@ -30,13 +30,20 @@ public class BulletView : MonoBehaviour , IDamagable
 
     public void DestroyBullet()
     {
-        Destroy(gameObject,2f);
+        Destroy(gameObject);
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        bulletController.Collision(collision);
     }
 
     public void InitBulletController(BulletController controller)
     {
         this.bulletController = controller;
     }
+
+   
 
     public BulletController BulletController { get; set; }
 }

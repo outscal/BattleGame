@@ -33,7 +33,7 @@ public class TankView : MonoBehaviour , IDamagable
     {
         //rigidbody = GetComponent<Rigidbody>();
         tankSpeed = TankModel.Speed;
-        ChangeState(startingState);
+        //ChangeState(startingState);
     }
 
     public void Update()
