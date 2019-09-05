@@ -1,21 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody),typeof(Image))]
 public class TankView : MonoBehaviour , IDamagable
 {
     public Vector3 prefabPosition;
-    //private BulletController bulletController;
     public float tankSpeed;
     public BulletView bulletView;
     private TankController tankController;
+    private Image image;
 
+    [SerializeField]
+    private List<TankState> tankStates;
+
+    public TankPatrollingState patrollingState;
+    public TankChasingState chasingState;
+
+
+    [SerializeField]
+    private TankState startingState;
+
+    private TankState currentState;
+
+    private void Awake()
+    {
+        image = GetComponent<Image>();
+    }
     void Start()
     {
         //rigidbody = GetComponent<Rigidbody>();
         tankSpeed = TankModel.Speed;
+        ChangeState(startingState);
     }
 
     public void Update()
@@ -55,13 +73,29 @@ public class TankView : MonoBehaviour , IDamagable
     
     public void TakeDamage(float damage)
     {
-        tankController.Damage(damage);
+        tankController.ApplyDamage(damage);
         Debug.Log("Damage Caused: "+damage);
     }
 
     public void InitTankController(TankController controller)
     {
         this.tankController = controller;
+    }
+
+    public void ChangeColor(Color color)
+    {
+        image.color = color;
+    }
+
+    public void ChangeState(TankState newState)
+    {
+        if(currentState!=null)
+        {
+            currentState.OnExitState();
+        }
+
+        currentState = newState;
+        currentState.OnEnterState();
     }
     
     public static Vector3 Position { get; set; }

@@ -2,17 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(TankView))]
 public class TankState : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    protected TankView tankView;
+
+    [SerializeField]
+    protected Color color;
+
+    private void Awake()
     {
-        
+        tankView = GetComponent<TankView>();  
     }
 
-    // Update is called once per frame
-    void Update()
+    public virtual void OnEnterState()
     {
-        
+        this.enabled = true;
     }
+
+    public virtual void OnExitState()
+    {
+        this.enabled = false;
+    }
+
+    //public virtual void Tick()
+    //{
+    //}
 }

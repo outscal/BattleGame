@@ -16,19 +16,6 @@ public class BulletView : MonoBehaviour , IDamagable
         bulletSpeed = BulletModel.Speed;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.GetComponent<TankView>()!=null)
-        {
-            Debug.Log("Collision");
-            IDamagable damagable = collision.gameObject.GetComponent<TankView>();
-            damagable.TakeDamage(bulletController.BulletModel.Damage);
-            //Destroy(collision.gameObject);
-            //Destroy(gameObject);
-            //score++;
-        }
-    }
-
     public void TakeDamage(float damage)
     {
         Destroy(this.gameObject);

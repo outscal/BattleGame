@@ -18,7 +18,21 @@ public class BulletController
         BulletModel = bulletModel;
         BulletView.InitBulletController(this);
     }
-   
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        IDamagable damagable = collision.gameObject.GetComponent<IDamagable>();
+        if (damagable != null)
+        {
+            Debug.Log("Collision");
+            damagable.TakeDamage(BulletModel.Damage);
+            //Destroy(collision.gameObject);
+            //Destroy(gameObject);
+            //score++;
+        }
+    }
+
+
     public void SetPosition(Vector3 transform, Quaternion rotation)
     {
         BulletView.transform.position = transform;

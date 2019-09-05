@@ -15,7 +15,7 @@ public class TankController
         //TankView.Type = tankModel.Type;
     }
 
-    public void Damage(float damage)
+    public void ApplyDamage(float damage)
     {
         if (TankModel.Health - damage <= 0)
         {
@@ -23,7 +23,7 @@ public class TankController
         }
         else
         {
-            //TankModel.Health = TankModel.Health - damage;
+            TankModel.Health -= damage;
         }
     }
     

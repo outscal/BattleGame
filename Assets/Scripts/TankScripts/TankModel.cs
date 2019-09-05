@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class TankModel 
 {
+    private int playerID;
     public TankModel(TankScriptableObject tankscriptableobject)
     {
         Speed = tankscriptableobject.Speed;
         Health = tankscriptableobject.Health;
         TankType = tankscriptableobject.tankType;
+        playerID = Random.Range(1,1000);
         //Position = TankView.transform.position;
         Debug.Log("Tank Type"+TankType);
     }
@@ -22,7 +24,7 @@ public class TankModel
     //}
     
     public static float Speed { get; set;  }
-    public float Health { get; }
+    public float Health { get; set; }
     public static float BulletSpeed { get; set; }
     public static float Damage { get; set; }
     public TankType TankType { get; set; }
