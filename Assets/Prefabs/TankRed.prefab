@@ -208,7 +208,8 @@ GameObject:
   - component: {fileID: 8756781623884570367}
   - component: {fileID: 6136172602268875748}
   - component: {fileID: 2573430893742167761}
-  - component: {fileID: 2644731687347849696}
+  - component: {fileID: 3103240741676833578}
+  - component: {fileID: 5145851497139583987}
   m_Layer: 0
   m_Name: TankRed
   m_TagString: Player
@@ -252,10 +253,9 @@ MonoBehaviour:
   tankSpeed: 0
   bulletView: {fileID: -6954580411717822910, guid: 53a7699cdfd848049bd58f61bd392765,
     type: 3}
-  tankStates: []
-  patrollingState: {fileID: 0}
-  chasingState: {fileID: 0}
-  startingState: {fileID: 0}
+  patrollingState: {fileID: 3103240741676833578}
+  chasingState: {fileID: 5145851497139583987}
+  startingState: {fileID: 3103240741676833578}
 --- !u!54 &8756781623884570367
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -293,7 +293,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262450027638473675}
   m_CullTransparentMesh: 0
---- !u!114 &2644731687347849696
+--- !u!114 &3103240741676833578
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -302,27 +302,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1262450027638473675}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 5831e25f1f896ac408d5cdf992412ece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5145851497139583987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262450027638473675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab7beea19e64bf4081b5e1ccd9e0fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1262450027638473677
 GameObject:
   m_ObjectHideFlags: 0

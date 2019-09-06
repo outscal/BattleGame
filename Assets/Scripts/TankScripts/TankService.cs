@@ -38,21 +38,18 @@ public class TankService : GenericSingleton<TankService>
         {
             tank_no = 0;
             SpawnTankType(tank_no);
-            //bulletService.SpawnBulletType(0);
         }
 
         if (Input.GetKeyDown(KeyCode.B))
         {
             tank_no = 1;
             SpawnTankType(tank_no);
-            //bulletService.SpawnBulletType(1);
         }
 
         if (Input.GetKeyDown(KeyCode.C))
         {
             tank_no = 2;
             SpawnTankType(tank_no);
-            //bulletService.SpawnBulletType(2);
         }
     }
 
@@ -68,6 +65,7 @@ public class TankService : GenericSingleton<TankService>
         TankController tankController = new TankController(tankmodel, tankView);
     }
 
+    
     void SpawnEnemyTanks()
     {
         if (Input.GetKeyDown(KeyCode.O))
@@ -76,9 +74,9 @@ public class TankService : GenericSingleton<TankService>
             int selection = Random.Range(0, enemyTanks.Count);
             Instantiate(enemyTanks[selection], randomPosition, Quaternion.identity);
            // BulletController bulletController = new BulletController(bulletPrefab);
-
         }
 
     }
+    
 }
     

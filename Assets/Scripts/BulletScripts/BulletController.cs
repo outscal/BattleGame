@@ -26,7 +26,7 @@ public class BulletController
         {
             Debug.Log("Collision");
             damagable.TakeDamage(BulletModel.Damage);
-            
+            bulletPrefab.DestroyBullet();
             //Destroy(collision.gameObject);
             //Destroy(gameObject);
             //score++;

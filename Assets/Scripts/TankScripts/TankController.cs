@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TankController 
 {
+    public Vector3 currentPosition;
     public TankController(TankModel tankModel,TankView tankPrefab)
     {
         TankView = GameObject.Instantiate<TankView>(tankPrefab);
@@ -29,7 +30,7 @@ public class TankController
     
     public void SetPosition()
     {
-        Vector3 currentPosition = TankView.transform.position;
+        currentPosition = TankView.transform.position;
     }
     
     public void Fire()

@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class TankPatrollingState : TankState
 {
-    private float timeElapsed;
+    //private float timeElapsed;
+    private TankController tankController; 
+    private EnemyScript enemyScript;
+
+    private void Start()
+    {
+        
+    }
+
     public override void OnEnterState()
     {
         base.OnEnterState();
         Debug.Log("Entering Patrolling state");
-        tankView.ChangeColor(color);
+        //tankView.ChangeColor(color);
     }
 
     public override void OnExitState()
@@ -21,11 +29,17 @@ public class TankPatrollingState : TankState
 
     private void Update()
     {
-        timeElapsed += Time.deltaTime;
-        if(timeElapsed>5f)
-        {
+        //timeElapsed += Time.deltaTime;
+        //if (timeElapsed > 5f)
+        //{
             //tankView.ChangeState(GetComponent<TankChasingState>());
-            tankView.ChangeState(tankView.chasingState);
-        }
+            if (Vector3.Distance(GetComponent<TankView>().transform.position,GetComponent<EnemyScript>().transform.position) < 30f)
+            {
+                Debug.Log("Change to Attacking State");
+                //Debug.Log(GetComponent<EnemyScript>().transform.position);
+                Debug.Log(tankController.currentPosition);
+            }
+            //tankView.ChangeState(tankView.chasingState);
+        //}
     }
 }

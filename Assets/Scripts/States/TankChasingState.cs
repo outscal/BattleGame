@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class TankChasingState : TankState
 {
-    [SerializeField]
-    private Color differentColor;
+    //[SerializeField]
+    //private Color differentColor;
 
     public override void OnEnterState()
     {
         base.OnEnterState();
-        tankView.ChangeColor(differentColor);
+        //tankView.ChangeColor(differentColor);
     }
 }

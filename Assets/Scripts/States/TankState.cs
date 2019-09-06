@@ -7,8 +7,8 @@ public class TankState : MonoBehaviour
 {
     protected TankView tankView;
 
-    [SerializeField]
-    protected Color color;
+    //[SerializeField]
+    //protected Color color;
 
     private void Awake()
     {
@@ -25,6 +25,7 @@ public class TankState : MonoBehaviour
         this.enabled = false;
     }
 
+    
     //public virtual void Tick()
     //{
     //}
