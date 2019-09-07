@@ -18,4 +18,8 @@ public class TankAttackingState : TankState
 
     }
 
+    private void Update()
+    {
+        Debug.Log("Start Shooting on the Player");
+    }
 }

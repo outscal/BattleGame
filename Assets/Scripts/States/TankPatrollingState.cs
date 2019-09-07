@@ -39,8 +39,8 @@ public class TankPatrollingState : TankState
             
             if (Vector3.Distance(player.position,GetComponent<EnemyScript>().transform.position) < 30f)
             {
-                Debug.Log(player.position);
-                Debug.Log("Change to Attacking State");
+                //Debug.Log(player.position);
+                Debug.Log("Change to Chasing State");
                 //Debug.Log(GetComponent<EnemyScript>().transform.position);
                 //Debug.Log(tankController.currentPosition);
                 tankView.ChangeState(tankView.chasingState);

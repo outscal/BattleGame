@@ -18,6 +18,7 @@ public class TankView : MonoBehaviour , IDamagable
     [SerializeField]
     public TankPatrollingState patrollingState;
     public TankChasingState chasingState;
+    public TankAttackingState attackingState;
 
     [SerializeField]
     private TankState startingState;
@@ -39,7 +40,6 @@ public class TankView : MonoBehaviour , IDamagable
         //Debug.Log(this.transform.position);
         Movement();
         FireBullet();
-        Debug.Log(tankController.currentPosition);
         //prefabPosition = FindObjectOfType<TankView>().transform.position;
         Position = this.transform.position;
     }
@@ -103,12 +103,17 @@ public class TankView : MonoBehaviour , IDamagable
 
     public void ChangeState(TankState newState)
     {
-        if(currentState!=null)
-        {
-            currentState.OnExitState();
-        }
-        currentState = newState;
-        currentState.OnEnterState();
+        //if(gameObject.tag=="Enemy")
+        //{
+
+            if (currentState != null)
+            {
+                currentState.OnExitState();
+            }
+            currentState = newState;
+            currentState.OnEnterState();
+
+        //}
     }
     
     public static Vector3 Position { get; set; }
