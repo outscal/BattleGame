@@ -7,7 +7,7 @@ using System;
 [RequireComponent(typeof(Rigidbody)/*,typeof(Image)*/)]
 public class TankView : MonoBehaviour , IDamagable
 {
-    public Vector3 prefabPosition;
+    //public Vector3 prefabPosition;
     public float tankSpeed;
     public BulletView bulletView;
     private TankController tankController;
@@ -36,11 +36,12 @@ public class TankView : MonoBehaviour , IDamagable
 
     public void Update()
     {
+        //Debug.Log(this.transform.position);
         Movement();
         FireBullet();
         Debug.Log(tankController.currentPosition);
-        prefabPosition = FindObjectOfType<TankView>().transform.position;
-        Position = prefabPosition;
+        //prefabPosition = FindObjectOfType<TankView>().transform.position;
+        Position = this.transform.position;
     }
 
     private void FireBullet()

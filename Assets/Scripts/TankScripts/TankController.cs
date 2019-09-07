@@ -31,6 +31,7 @@ public class TankController
     public void SetPosition()
     {
         currentPosition = TankView.transform.position;
+        
     }
     
     public void Fire()

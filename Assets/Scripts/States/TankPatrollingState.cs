@@ -7,10 +7,13 @@ public class TankPatrollingState : TankState
     //private float timeElapsed;
     private TankController tankController; 
     private EnemyScript enemyScript;
+    public Transform player;
+    //private TankView tankView;
 
     private void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        //tankView = GetComponent<TankView>();
     }
 
     public override void OnEnterState()
@@ -33,12 +36,16 @@ public class TankPatrollingState : TankState
         //if (timeElapsed > 5f)
         //{
             //tankView.ChangeState(GetComponent<TankChasingState>());
-            if (Vector3.Distance(GetComponent<TankView>().transform.position,GetComponent<EnemyScript>().transform.position) < 30f)
+            
+            if (Vector3.Distance(player.position,GetComponent<EnemyScript>().transform.position) < 30f)
             {
+                Debug.Log(player.position);
                 Debug.Log("Change to Attacking State");
                 //Debug.Log(GetComponent<EnemyScript>().transform.position);
-                Debug.Log(tankController.currentPosition);
+                //Debug.Log(tankController.currentPosition);
+                tankView.ChangeState(tankView.chasingState);
             }
+            
             //tankView.ChangeState(tankView.chasingState);
         //}
     }

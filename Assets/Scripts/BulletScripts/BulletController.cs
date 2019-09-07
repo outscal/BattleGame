@@ -13,8 +13,7 @@ public class BulletController
         Rigidbody instBulletRigidBody = BulletView.GetComponent<Rigidbody>();
         instBulletRigidBody.AddForce(Vector3.forward * TankModel.BulletSpeed);
         Debug.Log("Speed "+TankModel.Speed);
-        //BulletView.DestroyBullet();
-        //Debug.Log("Bullet Spawned");
+        
         BulletModel = bulletModel;
         BulletView.InitBulletController(this);
     }
