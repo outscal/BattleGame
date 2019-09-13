@@ -8,6 +8,9 @@ public class TankPatrollingState : TankState
     private TankController tankController; 
     private EnemyScript enemyScript;
     public Transform player;
+
+    private bool dirRight = true;
+    public float speed = 2.0f;
     //private TankView tankView;
 
     private void Start()
@@ -32,22 +35,24 @@ public class TankPatrollingState : TankState
 
     private void Update()
     {
-        //timeElapsed += Time.deltaTime;
-        //if (timeElapsed > 5f)
-        //{
-            //tankView.ChangeState(GetComponent<TankChasingState>());
-            /*
-            if (Vector3.Distance(TankView.transform.position,gameObject.GetComponent<EnemyScript>().transform.position) < 3f)
+        if(gameObject.GetComponent<EnemyScript>())
+        {
+
+            if (dirRight)
+                transform.Translate(Vector2.right * speed * Time.deltaTime);
+            else
+                transform.Translate(-Vector2.right * speed * Time.deltaTime);
+
+            if (transform.position.x >= 4.0f)
             {
-                //Debug.Log(player.position);
-                Debug.Log("Change to Chasing State");
-                //Debug.Log(GetComponent<EnemyScript>().transform.position);
-                Debug.Log(TankView.transform.position);
-                tankView.ChangeState(tankView.chasingState);
+                dirRight = false;
             }
-            */
-            //tankView.ChangeState(tankView.chasingState);
-        //}
+
+            if (transform.position.x <= -4.0f)
+            {
+                dirRight = true;
+            }
+        }
     }
 
     public void OnTriggerEnter(Collider other)
