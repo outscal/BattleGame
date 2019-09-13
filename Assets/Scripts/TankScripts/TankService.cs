@@ -5,7 +5,7 @@ using UnityEngine;
 public class TankService : GenericSingleton<TankService>
 {
     public TankView tankView;
-
+    private ServicePoolTank servicePoolTank;
     public float speed;
     //public BulletService bulletService;
     public TankScriptableObjectList tankList;

@@ -10,9 +10,9 @@ public class BulletController
     public BulletController(BulletModel bulletModel,BulletView bulletPrefab)
     {
         BulletView = GameObject.Instantiate<BulletView>(bulletPrefab);
-        Rigidbody instBulletRigidBody = BulletView.GetComponent<Rigidbody>();
-        instBulletRigidBody.AddForce(Vector3.forward * TankModel.BulletSpeed);
-        Debug.Log("Speed "+TankModel.Speed);
+        //Rigidbody instBulletRigidBody = BulletView.GetComponent<Rigidbody>();
+        //instBulletRigidBody.AddForce(Vector3.forward * TankModel.BulletSpeed);
+        //Debug.Log("Speed "+TankModel.Speed);
         
         BulletModel = bulletModel;
         BulletView.InitBulletController(this);

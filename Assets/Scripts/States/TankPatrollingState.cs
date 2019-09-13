@@ -36,17 +36,34 @@ public class TankPatrollingState : TankState
         //if (timeElapsed > 5f)
         //{
             //tankView.ChangeState(GetComponent<TankChasingState>());
-            
-            if (Vector3.Distance(player.position,GetComponent<EnemyScript>().transform.position) < 30f)
+            /*
+            if (Vector3.Distance(TankView.transform.position,gameObject.GetComponent<EnemyScript>().transform.position) < 3f)
             {
                 //Debug.Log(player.position);
                 Debug.Log("Change to Chasing State");
                 //Debug.Log(GetComponent<EnemyScript>().transform.position);
-                //Debug.Log(tankController.currentPosition);
+                Debug.Log(TankView.transform.position);
                 tankView.ChangeState(tankView.chasingState);
             }
-            
+            */
             //tankView.ChangeState(tankView.chasingState);
         //}
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other is BoxCollider)
+        {
+            tankView.ChangeState(tankView.chasingState);
+        }
+
+        if (other is SphereCollider)
+        {
+            tankView.ChangeState(tankView.attackingState);
+        }
+        
+        //enemyScript.Trigger(other);
+    }
+
+    public TankView TankView { get; }
 }

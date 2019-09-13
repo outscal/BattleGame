@@ -208,6 +208,9 @@ GameObject:
   - component: {fileID: 8756781623884570367}
   - component: {fileID: 6136172602268875748}
   - component: {fileID: 2573430893742167761}
+  - component: {fileID: 7245292471025668353}
+  - component: {fileID: 1242358701945890831}
+  - component: {fileID: 2754418221597370509}
   m_Layer: 0
   m_Name: TankRed
   m_TagString: Player
@@ -250,10 +253,10 @@ MonoBehaviour:
   tankSpeed: 0
   bulletView: {fileID: -6954580411717822910, guid: 53a7699cdfd848049bd58f61bd392765,
     type: 3}
-  patrollingState: {fileID: 0}
-  chasingState: {fileID: 0}
-  attackingState: {fileID: 0}
-  startingState: {fileID: 0}
+  patrollingState: {fileID: 7245292471025668353}
+  chasingState: {fileID: 1242358701945890831}
+  attackingState: {fileID: 2754418221597370509}
+  startingState: {fileID: 7245292471025668353}
 --- !u!54 &8756781623884570367
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -291,6 +294,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262450027638473675}
   m_CullTransparentMesh: 0
+--- !u!114 &7245292471025668353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262450027638473675}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5831e25f1f896ac408d5cdf992412ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+--- !u!114 &1242358701945890831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262450027638473675}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ab7beea19e64bf4081b5e1ccd9e0fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2754418221597370509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262450027638473675}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ee54a6a25ec55548802acb6679ef1d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1262450027638473677
 GameObject:
   m_ObjectHideFlags: 0
