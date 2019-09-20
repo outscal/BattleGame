@@ -7,7 +7,7 @@ public class TankPatrollingState : TankState
     //private float timeElapsed;
     private TankController tankController; 
     private EnemyScript enemyScript;
-    public Transform player;
+    //public Transform player;
 
     private bool dirRight = true;
     public float speed = 2.0f;
@@ -15,7 +15,7 @@ public class TankPatrollingState : TankState
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        //player = GameObject.FindGameObjectWithTag("Player").transform;
         //tankView = GetComponent<TankView>();
     }
 
@@ -68,6 +68,11 @@ public class TankPatrollingState : TankState
         }
         
         //enemyScript.Trigger(other);
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        tankView.ChangeState(tankView.patrollingState);
     }
 
     public TankView TankView { get; }

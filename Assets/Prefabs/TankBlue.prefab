@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 1934975007215902771}
   - component: {fileID: 8512548940720534397}
   - component: {fileID: 9151274502737617463}
+  - component: {fileID: -4832239517020180300}
   m_Layer: 0
   m_Name: TankBlue
   m_TagString: Player
@@ -292,6 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  speed: 2
 --- !u!114 &8512548940720534397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +316,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ee54a6a25ec55548802acb6679ef1d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4832239517020180300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118326557776165210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c35e2de3e446744b914de3985c37d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &118326557776165212
