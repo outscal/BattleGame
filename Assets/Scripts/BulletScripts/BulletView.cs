@@ -24,8 +24,8 @@ public class BulletView : MonoBehaviour , IDamagable
 
     void Update()
     {
-        transform.Translate(transform.forward * bulletSpeed * Time.deltaTime);
-        Destroy(gameObject, 5f);
+        transform.Translate(transform.forward * bulletSpeed * 2 * Time.deltaTime);
+        Destroy(gameObject, 2f);
     }
 
     public void DestroyBullet()
@@ -35,7 +35,11 @@ public class BulletView : MonoBehaviour , IDamagable
 
     public void OnCollisionEnter(Collision collision)
     {
-        bulletController.Collision(collision);
+        //if(collision.gameObject.GetType() ==typeof (BoxCollider))
+        //{
+            Debug.Log("Enemy Attacked");
+            bulletController.Collision(collision);
+        //}
     }
 
     public void InitBulletController(BulletController controller)

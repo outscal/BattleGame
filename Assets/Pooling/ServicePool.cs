@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ServicePool<T> : GenericSingleton<ServicePool<T>> where T:class
 {
-    /*
+    
     private List<PooledItems<T>> pooledItems;
 
     public virtual T GetItem()
@@ -51,6 +51,6 @@ public class ServicePool<T> : GenericSingleton<ServicePool<T>> where T:class
         public T Item;
         public bool isUsed;
     }
-    */
+    
 }
 

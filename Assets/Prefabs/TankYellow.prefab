@@ -248,7 +248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tankSpeed: 0
-  bulletView: {fileID: 0}
+  bulletView: {fileID: 811552150228519913, guid: bfcafcf20cb941f44a0956655dd45a6f,
+    type: 3}
   patrollingState: {fileID: 4281838789535654568}
   chasingState: {fileID: 8054274550483506532}
   attackingState: {fileID: 3192574198630418133}
@@ -355,8 +356,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.27, y: 1, z: 3.02}
-  m_Center: {x: 0, y: 0.57, z: 0}
+  m_Size: {x: 3.29, y: 2.13, z: 3.38}
+  m_Center: {x: 0, y: 1.11, z: 0}
 --- !u!1 &1262450027638473677
 GameObject:
   m_ObjectHideFlags: 0

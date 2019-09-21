@@ -11,6 +11,7 @@ public class TankView : MonoBehaviour , IDamagable
     public float tankSpeed;
     public BulletView bulletView;
     private TankController tankController;
+    public static int enemies_killed;
     //private Image image;
     //[SerializeField]
     //private List<TankState> tankStates;
@@ -85,8 +86,11 @@ public class TankView : MonoBehaviour , IDamagable
 
     public void TakeDamage(float damage)
     {
+        enemies_killed++;
+        Debug.Log("Damage Caused: " + damage);
+        Destroy(gameObject);
         tankController.ApplyDamage(damage);
-        Debug.Log("Damage Caused: "+damage);
+
     }
 
     public void InitTankController(TankController controller)
@@ -94,12 +98,7 @@ public class TankView : MonoBehaviour , IDamagable
         this.tankController = controller;
     }
 
-    /*
-    public void ChangeColor(Color color)
-    {
-        image.color = color;
-    }
-    */
+   
 
     public void ChangeState(TankState newState)
     {
