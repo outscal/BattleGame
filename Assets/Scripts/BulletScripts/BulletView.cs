@@ -24,8 +24,8 @@ public class BulletView : MonoBehaviour , IDamagable
 
     void Update()
     {
-        transform.Translate(transform.forward * bulletSpeed * Time.deltaTime);
-        Destroy(gameObject, 5f);
+        transform.Translate(transform.forward * bulletSpeed * 2 * Time.deltaTime);
+        Destroy(gameObject, 2f);
     }
 
     public void DestroyBullet()

@@ -36,7 +36,7 @@ public class TankChasingState : TankState
     {
         enemyScript = GetComponent<EnemyScript>();
         playerScript = GetComponent<PlayerScript>();
-        life = 3;
+      
     }
 
     private void Update()

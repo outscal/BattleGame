@@ -11,6 +11,7 @@ public class TankView : MonoBehaviour , IDamagable
     public float tankSpeed;
     public BulletView bulletView;
     private TankController tankController;
+    public static int enemies_killed;
     //private Image image;
     //[SerializeField]
     //private List<TankState> tankStates;
@@ -85,6 +86,7 @@ public class TankView : MonoBehaviour , IDamagable
 
     public void TakeDamage(float damage)
     {
+        enemies_killed++;
         Debug.Log("Damage Caused: " + damage);
         Destroy(gameObject);
         tankController.ApplyDamage(damage);
