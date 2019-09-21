@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class TankAttackingState : TankState
 {
+    private TankController tankController;
+    private bool stateActive = false;
     public override void OnEnterState()
     {
         base.OnEnterState();
+        stateActive = true;
         Debug.Log("Entering Attacking state");
         
     }
@@ -14,6 +17,7 @@ public class TankAttackingState : TankState
     public override void OnExitState()
     {
         base.OnExitState();
+        stateActive = false;
         Debug.Log("Exiting Attacking state");
 
     }
@@ -21,5 +25,7 @@ public class TankAttackingState : TankState
     private void Update()
     {
         //Debug.Log("Start Shooting on the Player");
+        if (stateActive)
+            tankController.Fire();
     }
 }

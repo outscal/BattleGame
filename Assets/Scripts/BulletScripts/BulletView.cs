@@ -35,7 +35,11 @@ public class BulletView : MonoBehaviour , IDamagable
 
     public void OnCollisionEnter(Collision collision)
     {
-        bulletController.Collision(collision);
+        //if(collision.gameObject.GetType() ==typeof (BoxCollider))
+        //{
+            Debug.Log("Enemy Attacked");
+            bulletController.Collision(collision);
+        //}
     }
 
     public void InitBulletController(BulletController controller)

@@ -18,8 +18,10 @@ public class TankController
 
     public void ApplyDamage(float damage)
     {
+        Debug.Log(TankModel.Health);
         if (TankModel.Health - damage <= 0)
         {
+            
             Debug.Log("Activate Dead State");
         }
         else
