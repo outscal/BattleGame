@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-[RequireComponent(typeof(Rigidbody)/*,typeof(Image)*/)]
+[RequireComponent(typeof(Rigidbody))]
 public class TankView : MonoBehaviour , IDamagable
 {
     //public Vector3 prefabPosition;
@@ -26,21 +26,21 @@ public class TankView : MonoBehaviour , IDamagable
 
     private void Awake()
     {
-        //image = GetComponent<Image>();
+        
     }
     void Start()
     {
-        //rigidbody = GetComponent<Rigidbody>();
+        
         tankSpeed = TankModel.Speed;
         ChangeState(startingState);
     }
 
     public void Update()
     {
-        //Debug.Log(this.transform.position);
+        
         Movement();
         FireBullet();
-        //prefabPosition = FindObjectOfType<TankView>().transform.position;
+        
         Position = this.transform.position;
     }
 

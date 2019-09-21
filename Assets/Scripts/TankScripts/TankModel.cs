@@ -24,7 +24,7 @@ public class TankModel
     //}
     
     public static float Speed { get; set;  }
-    public float Health { get; set; }
+    public static float Health { get; set; }
     public static float BulletSpeed { get; set; }
     public static float Damage { get; set; }
     public TankType TankType { get; set; }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletController 
 {
     public TankController tankController;
-    public BulletView bulletPrefab;
+    public BulletView bulletView;
 
     public BulletController(BulletModel bulletModel,BulletView bulletPrefab)
     {
@@ -21,13 +21,13 @@ public class BulletController
     public void Collision(Collision collision)
     {
         IDamagable damagable = collision.gameObject.GetComponent<IDamagable>();
-        if (damagable != null)
+        if (damagable != null && collision.gameObject.tag == "Enemy")
         {
             Debug.Log("Collision");
             damagable.TakeDamage(BulletModel.Damage);
-            bulletPrefab.DestroyBullet();
+            bulletView.DestroyBullet();
             //Destroy(collision.gameObject);
-            //Destroy(gameObject);
+            
             //score++;
         }
     }

@@ -30,7 +30,7 @@ public class BulletView : MonoBehaviour , IDamagable
 
     public void DestroyBullet()
     {
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 
     public void OnCollisionEnter(Collision collision)

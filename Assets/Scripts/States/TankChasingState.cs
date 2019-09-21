@@ -13,6 +13,7 @@ public class TankChasingState : TankState
     private PlayerScript playerScript;
     private bool stateActive = false;
     private Vector3 playerPos;
+    public static int life = 3;
 
     public override void OnEnterState()
     {
@@ -35,6 +36,7 @@ public class TankChasingState : TankState
     {
         enemyScript = GetComponent<EnemyScript>();
         playerScript = GetComponent<PlayerScript>();
+        life = 3;
     }
 
     private void Update()
@@ -43,37 +45,31 @@ public class TankChasingState : TankState
         {
             //Debug.Log(playerScript.transform.position);
             //playerPos = playerScript.transform.position;
+            if(enemyScript)
+            {
 
-            this.transform.rotation = Quaternion.Slerp(this.transform.rotation
-                                                  , Quaternion.LookRotation(GameObject.FindGameObjectWithTag("Player").transform.position - this.transform.position)
-                                                 , rotationSpeed * Time.deltaTime);
-            this.transform.position += transform.forward  * moveSpeed * Time.deltaTime; 
+                this.transform.rotation = Quaternion.Slerp(this.transform.rotation
+                                                      , Quaternion.LookRotation(GameObject.FindGameObjectWithTag("Player").transform.position - this.transform.position)
+                                                     , rotationSpeed * Time.deltaTime);
+                this.transform.position += transform.forward * moveSpeed * Time.deltaTime;
+
+            }
         }
 
-        //        if (enemyScript)
+        
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(enemyScript && collision.gameObject.name!="Plane")
         {
-            //
-
-
-            //gameObject.GetComponent<EnemyScript>().transform.position += transform.forward * moveSpeed * Time.deltaTime;
-            //Debug.Log("Enemy Position"+this.transform.position);
-            
+            Destroy(collision.gameObject);
+            if(collision.gameObject.tag=="Player")
+            {
+                life--;
+                Debug.Log("Life " + life);
+            }
         }
-        /*
-        if (Vector3.Distance(tankPatrollingState.player.position, gameObject.GetComponent<EnemyScript>().transform.position) > 30f)
-        {
-            
-            Debug.Log("Change back to Patrolling State");
-            tankView.ChangeState(tankView.patrollingState);
-        }
-
-        if (Vector3.Distance(tankPatrollingState.player.position, gameObject.GetComponent<EnemyScript>().transform.position) < 10f)
-        {
-            
-            Debug.Log("Change to Attacking State");
-            tankView.ChangeState(tankView.attackingState);
-        }
-        */
     }
 
 }
